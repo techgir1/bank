@@ -4,5 +4,12 @@ describe('bankAccount', function() {
 		expect(testBankAccount.memberName).to.equal("Beth Foster");
 		expect(testBankAccount.initialDeposit).to.equal(100.50);
 	});
+});
 
+describe('deposit', function() {
+	it("adds virtual money into customer's account", function() {
+		var testBankAccount = new bankAccount("Beth Foster", 100.50);
+		testBankAccount.depositWithdraw(50.00, 0);
+		expect(testBankAccount.initialDeposit).to.equal(150.50);
+	});
 });
