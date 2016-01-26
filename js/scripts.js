@@ -16,4 +16,28 @@ $(document).ready(function() {
 		$("span.balance").text(newAccount.initialDeposit);
 		event.preventDefault();
 	});
+
+ $("form#deposit-withdraw").submit(function(event) {
+    event.preventDefault();
+    var inputtedDeposit;
+    if ($("input#deposit").val() == "") {
+      inputtedDeposit = 0;
+    } else {
+      inputtedDeposit = parseInt($("input#deposit").val());
+    }
+    var inputtedWithdraw;
+
+    if ($("input#withdraw").val() == "") {
+      inputtedWithdraw = 0;
+    } else {
+      inputtedWithdraw = parseInt($("input#withdraw").val());
+    }
+
+    newAccount.depositWithdraw(inputtedDeposit, inputtedWithdraw);
+    $("span.balance").text(newAccount.initialDeposit);
+  });
 });
+
+
+
+	
