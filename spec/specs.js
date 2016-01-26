@@ -13,3 +13,11 @@ describe('deposit', function() {
 		expect(testBankAccount.initialDeposit).to.equal(150.50);
 	});
 });
+
+describe('withdraw', function() {
+	it("withdraws money for a customer's account", function() {
+		var testBankAccount = new bankAccount("Beth Foster", 100.50);
+		testBankAccount.depositWithdraw(0, 50.00);
+		expect(testBankAccount.initialDeposit).to.equal(50.50);
+	});
+});
